@@ -83,7 +83,7 @@ void split_players_into_teams(char *players, char *teams, int player_count, int 
         c = *(players + (unsorted_players - 1) * MAX_NAME_LENGTH);
         c_index = 0;
         for(; c != '\0'; c = *(players + (unsorted_players - 1) * MAX_NAME_LENGTH + c_index)) {
-            last_player[c_index] = c;
+            last_player[c_index++] = c;
         }
         
         
@@ -93,7 +93,7 @@ void split_players_into_teams(char *players, char *teams, int player_count, int 
         c = *(players + random_player_index * MAX_NAME_LENGTH);
         c_index = 0;
         for(; c != '\0'; c = *(players + random_player_index * MAX_NAME_LENGTH + c_index)) {
-            chosen_player[c_index] = c;
+            chosen_player[c_index++] = c;
         }
         
         //Placing the chosen player in a team
@@ -109,6 +109,9 @@ void split_players_into_teams(char *players, char *teams, int player_count, int 
         }
         *(players + random_player_index * MAX_NAME_LENGTH + c_index) = '\0';
         
+        printf("%s\n", last_player);
+        printf("%s\n", chosen_player);
+        printf("\n");
         
         unsorted_players--;
         team_index++;
@@ -185,72 +188,12 @@ int main(void) {
     // Splitting people into teams
     split_players_into_teams(players[0], teams[0][0], player_count, team_count, players_per_team);
     
-    return 0;
-}
-
-
-
-int main(void) {
     
-    // Getting all_players string
-    char all_players[MAX_ALL_PLAYERS_LENGTH];
-    printf("Names (delimiter : \",\") > ");
-    scanf("%[^\n]%*c", all_players);
-    
-    
-    // Calculating number of players
-    int player_count;
-    
-    player_count = get_number_of_players(all_players);
-    
-    
-    // Initializing player list
-    char players[player_count][MAX_NAME_LENGTH];
-    
-    
-    // Emptying player list
-    int player_index;
-    int c_index;
-    
-    for(player_index = 0; player_index < player_count; player_index++)
-        for(c_index = 0; c_index < MAX_NAME_LENGTH; c_index++)
-            players[player_index][c_index] = '\0';
-    
-    // Splitting all_players into player list
-    split_all_players_into_list(players[0], all_players);
-    
-    
-    // Getting number of teams
-    int team_count;
-    printf("Number of teams > ");
-    scanf("%d", &team_count);
-    
-    
-    // Initializing teams
-    int players_per_team;
-    
-    if(player_count % team_count == 0) {
-        players_per_team = player_count/team_count;
-    } else {
-        players_per_team = player_count/team_count + 1;
-    }
-    
-    char teams[team_count][players_per_team][MAX_NAME_LENGTH];
-    
-    
-    // Emptying teams
-    int team_index;
-    int player_index;
-    int c_index;
-    
-    for(team_index = 0; team_index < team_count; team_index++)
+    for(team_index = 0; team_index < team_count; team_index++) {
+        printf("Team %d\n", team_index + 1);
         for(player_index = 0; player_index < players_per_team; player_index++)
-            for(c_index = 0; c_index < MAX_NAME_LENGTH; c_index++)
-                teams[team_index][player_index][c_index] = '\0';
-    
-    
-    // Splitting people into teams
-    split_players_into_teams(players[0], teams[0][0], player_count, team_count, players_per_team);
+            printf("%s\n", teams[team_index][player_index]);
+    }
     
     return 0;
 }
