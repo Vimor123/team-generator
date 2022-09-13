@@ -69,6 +69,7 @@ void split_players_into_teams(char *players, char *teams, int player_count, int 
     
     
     player_in_team_index = 0;
+    team_index = 0;
     
     while(unsorted_players > 0) {
         
@@ -96,11 +97,13 @@ void split_players_into_teams(char *players, char *teams, int player_count, int 
             chosen_player[c_index++] = c;
         }
         
+        
         //Placing the chosen player in a team
         c_index = 0;
         for(c = chosen_player[c_index]; c != '\0'; c = chosen_player[++c_index]) {
-            *(teams + team_index * (team_count * players_per_team * MAX_NAME_LENGTH) + player_in_team_index * MAX_NAME_LENGTH + c_index) = c;
+            *(teams + team_index * (players_per_team * MAX_NAME_LENGTH) + player_in_team_index * MAX_NAME_LENGTH + c_index) = c;
         }
+        
         
         //Switching the chosen player with the last player
         c_index = 0;
@@ -109,9 +112,6 @@ void split_players_into_teams(char *players, char *teams, int player_count, int 
         }
         *(players + random_player_index * MAX_NAME_LENGTH + c_index) = '\0';
         
-        printf("%s\n", last_player);
-        printf("%s\n", chosen_player);
-        printf("\n");
         
         unsorted_players--;
         team_index++;
@@ -151,6 +151,7 @@ int main(void) {
     for(player_index = 0; player_index < player_count; player_index++)
         for(c_index = 0; c_index < MAX_NAME_LENGTH; c_index++)
             players[player_index][c_index] = '\0';
+    
     
     // Splitting all_players into player list
     split_all_players_into_list(players[0], all_players);
