@@ -34,7 +34,6 @@ def printTeams(teams):
         print("=" * 20)
 
         for person in teams[teamIndex]:
-
             print(person)
 
     print("")
