@@ -66,15 +66,18 @@ func printTeams(teams [][]string) {
         divider += "="
     }
     
+    fmt.Printf("\n")
     
     for teamIndex := 0; teamIndex < len(teams); teamIndex++ {
         
-        fmt.Printf("\nTeam %d\n", teamIndex + 1)
+        fmt.Printf("Team %d\n", teamIndex + 1)
         fmt.Println(divider)
         
         for playerIndex := 0; playerIndex < len(teams[teamIndex]); playerIndex++ {
             fmt.Println(teams[teamIndex][playerIndex])
         }
+        
+        fmt.Printf("\n")
     }
 }
 
