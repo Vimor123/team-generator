@@ -140,8 +140,10 @@ void print_teams(char *teams, int team_count, int players_per_team) {
     }
     divider[20] = '\0';
     
+    printf("\n");
+    
     for(team_index = 0; team_index < team_count; team_index++) {
-        printf("\nTeam %d\n", team_index + 1);
+        printf("Team %d\n", team_index + 1);
         printf("%s\n", divider);
         
         for(player_index = 0; player_index < players_per_team; player_index++) {
@@ -156,6 +158,8 @@ void print_teams(char *teams, int team_count, int players_per_team) {
             if(*(teams + team_index * players_per_team * MAX_NAME_LENGTH + player_index * MAX_NAME_LENGTH) != '\0')
                 printf("\n");
         }
+        
+        printf("\n");
     }
     
     return;
