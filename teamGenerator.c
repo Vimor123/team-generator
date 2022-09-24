@@ -152,7 +152,7 @@ void print_teams(char *teams, int team_count, int players_per_team) {
             c = *(teams + team_index * players_per_team * MAX_NAME_LENGTH + player_index * MAX_NAME_LENGTH);
             
             for(; c != '\0'; c = *(teams + team_index * players_per_team * MAX_NAME_LENGTH + player_index * MAX_NAME_LENGTH + (++c_index))) {
-                printf("%c", *(teams + team_index * players_per_team * MAX_NAME_LENGTH + player_index * MAX_NAME_LENGTH + c_index));
+                printf("%c", c);
             }
             
             if(*(teams + team_index * players_per_team * MAX_NAME_LENGTH + player_index * MAX_NAME_LENGTH) != '\0')
