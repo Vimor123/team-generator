@@ -19,7 +19,7 @@ Simply run the program in the terminal, type in all the names (all in the same l
 and in no time the program will spit out all of the teams which are, of course, fairly and randomly generated. In each team there will be the same number of people, 
 or in case the number of people is not divisible by the number of teams, there will be some teams with 1 less player.
 
-Team Generator programs are currently available in Python (elegant, clean), C (use with caution), Go (ugly) and Java (gay).
+Team Generator programs are currently available in Python (elegant, clean), C (use with caution), Go (ugly), Java (gay) and C# (Microsoft Java).
 
 
 ## P.S.
