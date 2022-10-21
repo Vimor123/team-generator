@@ -110,7 +110,7 @@ class Team {
                 teamIndex = 0;
             }
         }
-        
+	
         return teams;
     }
 }
