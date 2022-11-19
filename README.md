@@ -20,7 +20,7 @@ and in no time the program will spit out all of the teams which are, of course, 
 or in case the number of people is not divisible by the number of teams, there will be some teams with 1 less player.
 
 Team Generator programs are currently available in Python (elegant, clean), C (use with caution), Go (ugly), Java (gay), 
-C# (Microsoft Java) and R (now this is real data science).
+C# (Microsoft Java), R (now this is real data science) and Bash (for all the Linux kids).
 
 
 ## P.S.
