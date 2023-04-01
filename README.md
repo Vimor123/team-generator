@@ -15,7 +15,7 @@ Well, not exactly difficult, but rather a bit time-consuming, 2-5 minutes time-c
 
 But, worry not, because these programs will help you split your friends into groups for the event. And save time. Maybe.
 
-Simply run the program in the terminal, type in all the names (all in the same line, divided by a specified delimiter) and type in the number of teams,
+Simply compile and run the program in the terminal, type in all the names (all in the same line, divided by a specified delimiter) and type in the number of teams,
 and in no time the program will spit out all of the teams which are, of course, fairly and randomly generated. In each team there will be the same number of people, 
 or in case the number of people is not divisible by the number of teams, there will be some teams with 1 less player.
 
